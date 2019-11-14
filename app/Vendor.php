@@ -11,4 +11,9 @@ class Vendor extends Model
     protected $primarykey = 'id';
 
     protected $fillable = ['vendor','vendorname','pawd','phone'];
+
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
 }

@@ -11,4 +11,9 @@ class Product extends Model
     protected $primarykey = 'id';
 
     protected $fillable = ['productname','description','count','price','photo','vendor_id'];
+
+    public function vendor()
+    {
+        return $this->belongsTo('App\Vendor');
+    }
 }

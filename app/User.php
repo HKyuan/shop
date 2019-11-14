@@ -11,4 +11,9 @@ class User extends Model
     protected $primarykey = 'id';
 
     protected $fillable = ['email','nickname','pawd','phone','status'];
+
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
 }

@@ -15,7 +15,7 @@ class CreateVendorsTable extends Migration
     {
         Schema::create('vendors', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('vendor')->unique();
+            $table->string('vendor',50)->unique();
             $table->string('vendorname');
             $table->string('pawd',60);
             $table->string('phone',12);

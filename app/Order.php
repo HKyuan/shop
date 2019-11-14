@@ -11,4 +11,9 @@ class Order extends Model
     protected $primarykey = 'id';
 
     protected $fillable = [ 'total' , 'user_id' ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
