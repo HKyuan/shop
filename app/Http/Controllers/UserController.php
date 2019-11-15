@@ -6,13 +6,26 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function getLogin()
+    {
+        return view('users.login',['title'=>'登入']);
+    }
     public function getUser()
     {
         
     }
-    
-    public function getLogin()
+    public function getRegister()
     {
-        return view('users.login',['title'=>'登入']);
+        return view('users.register',['title'=>'註冊']);
+    }
+    public function postRegister()
+    {
+        $query = request()->validate([
+            'email'=>'bail | required',
+        ]);
+
+        User::create($query);
+
+        return redirect('/');
     }
 }
