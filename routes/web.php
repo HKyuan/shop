@@ -14,9 +14,9 @@
 Route::get('/', 'UserController@getLogin');
 
 Route::group(['prefix' => 'user'], function () {
+    Route::post('/login', 'UserController@postLogin');
     Route::group(['middleware' => ['user']], function () {
         Route::get('/', 'UserController@getUser');
-        Route::post('/login', 'UserController@postLogin');
         Route::get('/logout', 'UserController@getLogout');
         Route::get('/register', 'UserController@getRegister');
         Route::post('/register', 'UserController@postRegister');
