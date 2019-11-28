@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('nickname',10);
             $table->string('pawd',60);
             $table->string('phone',12);
-            $table->string('status');
+            $table->string('status',1);
             $table->timestamps();
         });
     }
